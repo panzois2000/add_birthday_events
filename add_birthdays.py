@@ -24,6 +24,7 @@ def add_birthday(calendar_service, name, birthday_date):
         'description': f"{name}'s birthday celebration!",
         'start': {'date': birthday_date},
         'end': {'date': birthday_date},
+        'recurrence': ['RRULE:FREQ=YEARLY']
     }
     calendar_service.events().insert(calendarId='primary', body=event).execute()
 
